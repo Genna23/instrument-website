@@ -1,0 +1,134 @@
+---
+
+import reviewImage from './review.jpg'
+
+import { Picture } from "astro:assets";
+
+---
+
+<section class="my-12 py-12 bg-slate-100 rounded-3xl" id="reviews">
+
+    <div class=" mx-auto px-4 space-y-6">
+
+        <h2 class="text-5xl">Отзывы от Клиентов</h2>
+
+        <div class="swiper reviews">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+
+                    <Picture
+                                    src={reviewImage}
+                                    formats={["avif", "webp"]}
+                                    class="rounded-3xl object-cover"
+                                    alt="Фотография СтройИнстурмент"
+                                />
+                                
+    
+                  </div>
+    
+              <div class="swiper-slide">
+
+                <Picture
+                                src={reviewImage}
+                                formats={["avif", "webp"]}
+                                class="rounded-3xl object-cover"
+                                alt="Фотография СтройИнстурмент"
+                            />
+                            
+
+              </div>
+
+              <div class="swiper-slide">
+
+                <Picture
+                                src={reviewImage}
+                                formats={["avif", "webp"]}
+                                class="rounded-3xl object-cover"
+                                alt="Фотография СтройИнстурмент"
+                            />
+                            
+
+              </div>
+
+              <div class="swiper-slide">
+
+                <Picture
+                                src={reviewImage}
+                                formats={["avif", "webp"]}
+                                class="rounded-3xl object-cover"
+                                alt="Фотография СтройИнстурмент"
+                            />
+                            
+
+              </div>
+
+
+              <div class="swiper-slide">
+
+                <Picture
+                                src={reviewImage}
+                                formats={["avif", "webp"]}
+                                class="rounded-3xl object-cover"
+                                alt="Фотография СтройИнстурмент"
+                            />
+                            
+
+              </div>
+
+              <div class="swiper-slide">
+
+                <Picture
+                                src={reviewImage}
+                                formats={["avif", "webp"]}
+                                class="rounded-3xl object-cover"
+                                alt="Фотография СтройИнстурмент"
+                            />
+                            
+
+              </div>
+
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+    </div>
+
+</section>
+
+<script>
+
+import Swiper from "swiper";
+
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const swiper = new Swiper(".reviews", {
+    modules: [Pagination],
+    spaceBetween: 30,
+    slidesPerView: 1,
+    breakpoints: {
+        786: {
+            slidesPerView: 5,
+            spaceBetween: 30
+        }, 
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
+        460: {
+            slidesPerView: 1,
+            spaceBetween: 30
+        }
+    },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        
+      },
+    });
+    
+</script>

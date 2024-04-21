@@ -1,0 +1,7 @@
+---
+
+const {link} = Astro.props
+
+---
+
+<a class:list={["ease-linear duration-100 text-lg hover:text-orange-300"]} href={link.anchor}>{link.name}</a>

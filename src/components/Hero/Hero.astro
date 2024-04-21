@@ -1,0 +1,61 @@
+---
+
+import heroImage from './hero.jpg'
+
+---
+
+<section class="my-6" id="hero">
+    <!-- container -->
+
+    <div class="mx-auto px-4">
+
+        <!-- rounded image -->
+
+        <div class="rounded-3xl hero min-h-[75vh] md:px-8 px-2 flex items-center">
+
+            <!-- content -->
+
+            <div>
+
+                <!-- header -->
+
+                <h1 class="text-white lg:text-9xl md:text-8xl sm:text-5xl text-4xl" >Аренда строительных инструментов</h1>
+
+                <!-- keywords -->
+
+                <div class="md:my-8 my-4 space-y-2">
+
+                    <span class="inline-block bg-white py-2 px-3 rounded-full">Витебск</span>
+
+                    <span class="inline-block bg-white py-2 px-3 rounded-full">24/7</span>
+
+                    <span class="inline-block bg-white py-2 px-3 rounded-full">Быстрая Аренда</span>
+
+                    <span class="inline-block bg-white py-2 px-3 rounded-full">+375 (33) 857 21 98</span>
+
+                </div>
+
+                <!-- contacts button -->
+
+                <div>
+                    <a class="text-lg text-white bg-orange-400 px-8 py-3 rounded-3xl ease-linear duration-100 hover:bg-orange-500 inline-block" href="#">Связаться</a>
+                </div>
+
+            </div>
+    
+        </div>
+
+    </div>
+
+</section>
+
+<style define:vars={{ heroImage }}>
+    .hero {
+        background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('./hero.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-attachment: scroll;
+    }
+</style>

@@ -1,0 +1,41 @@
+---
+import { Picture } from "astro:assets";
+
+import aboutImage from "./about.jpg";
+---
+
+<section class="my-12" id="about">
+    <!-- container -->
+    <div class=" mx-auto px-4">
+        <!-- grid -->
+
+        <div class="grid md:grid-cols-2 gap-4">
+            <!-- content -->
+
+            <div class="space-y-3">
+                <h2 class="text-5xl">О компании</h2>
+
+                <p class="text-xl">
+                    Компания «СтройИнструмент» предлагает широкий ассортимент
+                    строительного оборудования для аренды в городе Витебске.
+                    Наши клиенты могут рассчитывать на надежные и современные
+                    инструменты, которые помогут сделать любой строительный
+                    проект более эффективным и экономичным. Мы стремимся
+                    предоставлять высококачественный сервис и индивидуальный
+                    подход к каждому заказчику.
+                </p>
+            </div>
+
+            <!-- about image -->
+
+            <div>
+                <Picture
+                    src={aboutImage}
+                    formats={["avif", "webp"]}
+                    class="rounded-3xl"
+                    alt="Строительный инструмент в Витебске"
+                />
+            </div>
+        </div>
+    </div>
+</section>

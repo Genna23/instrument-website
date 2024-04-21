@@ -1,0 +1,59 @@
+---
+import NavLink from "./NavLink.astro";
+
+import { data } from '../../data/navData'
+
+import { Icon } from 'astro-icon/components'
+
+---
+<header>
+
+    <!-- container -->
+    <div class="mx-auto py-6 px-8">
+
+            <!-- burger icon -->
+            <label for="checkboxMenu" class="bg-white p-6 rounded-xl rounded-full right-4 z-20 top-2 fixed shadow cursor-pointer block lg:hidden">
+                <Icon name="burger" class="text-4xl cursor-pointer"/>
+            </label>
+
+        <!-- checkbox -->
+        <input type="checkbox" id="checkboxMenu" class="hidden">
+
+        <!-- wrapper -->
+
+       <div class="bg-white flex flex-col lg:flex-row lg:justify-between lg:items-end lg:relative z-20 fixed lg:w-full lg:h-auto h-full w-8/12 lg:left-0 left-[-100%] lg:px-0 px-8 menu-wrapper ease-linear duration-300 lg:py-0 py-2 top-0">
+
+         <!-- logo wrapper -->
+         <div>
+            <a class="text-2xl" href="#home">СтройИнструмент</a>
+            <!-- logo     -->
+            <!-- <Picture></Picture> -->
+        </div>
+
+        <!-- navigation -->
+        <div>
+
+            <nav class="lg:space-x-6 flex flex-col lg:flex-row lg:space-y-0 lg:my-0 my-3">
+                {
+                    data?.map(link => <NavLink {link} />)
+                }
+            </nav>
+
+        </div>
+
+        <!-- contact button -->
+        <div>
+            <a class="text-lg text-white bg-orange-400 px-8 py-3 rounded-3xl ease-linear duration-100 hover:bg-orange-500 inline-block" href="#">Связаться</a>
+        </div>
+
+       </div>
+
+    </div>
+
+</header>
+
+<style>
+    #checkboxMenu:checked~.menu-wrapper {
+        left: 0;
+    }
+</style>

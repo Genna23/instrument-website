@@ -1,0 +1,30 @@
+---
+import imageCard from "./imageCard.png";
+
+import { Picture } from "astro:assets";
+---
+
+<!-- card item -->
+<div class="bg-white rounded-3xl px-6 py-3 space-y-3">
+    <!-- card picture -->
+
+    <div>
+        <Picture
+            src={imageCard}
+            formats={["avif", "webp"]}
+            class="rounded-3xl"
+            alt="Аренда дрели в Витебске"
+        />
+    </div>
+
+    <!-- card content -->
+
+    <div>
+
+        <h3 class="text-xl">Дрель Bosch GBM 10 re</h3>
+
+        <p class="text-orange-400">15 руб/сут</p>
+
+    </div>
+
+</div>

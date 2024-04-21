@@ -1,0 +1,38 @@
+---
+import FaqItem from "./FaqItem.astro"
+---
+
+<section class="my-12" id="faqs">
+
+    <div class=" mx-auto px-4 space-y-6">
+
+        <div class="sm:text-center">
+            <h2 class="text-5xl">
+                Часто задаваемые вопросы
+            </h2>
+        </div>
+
+        <div>
+            
+            <FaqItem question="Какие документы необходимы для аренды инструмента?" answer="Для аренды требуется предъявить действующий удостоверение личности и подписать договор аренды."/>
+            <FaqItem question="Есть ли минимальный срок аренды?" answer="Минимальный срок аренды составляет один день."/>
+            <FaqItem question="Могу ли я арендовать инструмент на выходные или праздничные дни?" answer="Да, наш сервис предоставляет инструменты в аренду включая выходные и праздничные дни."/>
+            <FaqItem question="Какие есть способы оплаты?" answer="Вы можете оплатить аренду наличными или банковской картой при получении инструмента."/>
+            <FaqItem question="Что делать, если арендованный инструмент вышел из строя?" answer="В случае поломки свяжитесь с нами немедленно. Мы предоставим замену или устраним неисправность в кратчайшие сроки."/>
+
+        </div>
+        
+
+    </div>
+
+</section>
+
+<script>
+
+    document.querySelectorAll('.question').forEach(question => {
+        question.addEventListener('click', () => {
+            question.querySelector('.answer').classList.toggle('hidden')
+        })
+    })
+
+</script>
