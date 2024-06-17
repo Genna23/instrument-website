@@ -1,16 +1,42 @@
 ---
 import "../scss/fonts.css";
+
+import Header from "../components/Header/Header.astro";
+
+import Footer from "../components/Footer/Footer.astro";
+
+const { keyword, description } = Astro.props
+
+const defaultDescription = 'Аренда профессионального строительного инструмента в Витебске по выгодным ценам. Широкий выбор качественного оборудования: перфораторы, отбойные молотки, бетономешалки, виброплиты и многое другое. Быстрая доставка, удобная оплата. Выгодные условия для долгосрочной аренды.'
+
+const title = keyword ? `СтройИнструмент - ${keyword} | Аренда в Витебске` : 'СтройИнструмент - Аренда инструментов в Витебске'
+
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ru">
     <head>
+
+        <title>{title}</title>
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <meta name="description" content={description ? description : defaultDescription}>
+        <meta name="author" content="Henadzi">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content={title}>
+        <meta property="og:description" content={description ? description : defaultDescription}>
+        <meta property="og:image" content={'/images/hero.jpg'}>
+        <meta property="og:url" content={Astro.request.url}>
+
+        <link rel="sitemap" href="/sitemap-index.xml" />
     </head>
     <body>
+        <Header />
+
         <slot />
+
+        <Footer />
     </body>
 </html>
 

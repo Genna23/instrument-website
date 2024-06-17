@@ -1,0 +1,92 @@
+---
+
+import LogoMapSliderItem from "./LogoMapSliderItem.astro"
+
+import boshImage from './LogoMapImages/bosh.png'
+
+import briggs from './LogoMapImages/briggs.png'
+
+import karcher from './LogoMapImages/karcher.png'
+
+import stihl from './LogoMapImages/stihl.png'
+
+import wacker from './LogoMapImages/wacker.jpeg'
+
+import dewaltImage from './LogoMapImages/dewalt.png'
+
+import hikokiImage from './LogoMapImages/hikoki.png'
+
+import makitaImage from './LogoMapImages/makita.png'
+
+import metaboImage from './LogoMapImages/metabo.png'
+
+---
+
+<!-- slider -->
+
+<div class="swiper logos">
+    <!-- slider wrapper -->
+
+    <div class="swiper-wrapper">
+        <!-- slider item -->
+
+        <LogoMapSliderItem image={boshImage}/>
+
+        <LogoMapSliderItem image={dewaltImage}/>
+
+        <LogoMapSliderItem image={hikokiImage}/>
+
+        <LogoMapSliderItem image={briggs}/>
+
+        <LogoMapSliderItem image={stihl}/>
+
+        <LogoMapSliderItem image={wacker}/>
+
+        <LogoMapSliderItem image={karcher}/>
+
+        <LogoMapSliderItem image={makitaImage}/>
+
+        <LogoMapSliderItem image={metaboImage}/>
+
+        <LogoMapSliderItem image={boshImage}/>      
+
+    </div>
+
+    <!-- pagination -->
+
+    <div class="swiper-pagination"></div>
+</div>
+
+<script>
+    import Swiper from "swiper";
+
+    import { Pagination } from "swiper/modules";
+
+    import "swiper/css";
+    import "swiper/css/navigation";
+    import "swiper/css/pagination";
+
+    const swiper = new Swiper(".logos", {
+        modules: [Pagination],
+        spaceBetween: 30,
+        slidesPerView: 1,
+        breakpoints: {
+            786: {
+                slidesPerView: 7,
+                spaceBetween: 30,
+            },
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            460: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>

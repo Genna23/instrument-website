@@ -1,0 +1,61 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import urlSlug from '../utils/urlSlug';
+
+import { Picture } from 'astro:assets';
+
+export async function getStaticPaths() {
+    
+    const cards = await Astro.glob('../cards/*.md')
+
+    return cards.map((card) => {
+        return {
+            params: { card: `catalog/${urlSlug(card.frontmatter.title)}` },
+            props: {card}
+        }
+    })
+
+}
+
+const { title, price, image } = Astro.props.card.frontmatter
+
+const { Content } = Astro.props.card
+
+---
+
+<DefaultLayout keyword={title} description={`Аренда инструментов в Витебске. ${Astro.props.card.rawContent()} Доступные цены и удобные условия аренды.`}>
+
+    <section class="min-h-screen py-12">
+
+        <div class="px-8 mx-auto">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- card image -->
+
+                <div>
+
+                    <Picture formats={['avif', 'webp']} alt={title} src={image.src} width={600} height={600}/>
+
+                </div>
+
+                <div class="space-y-3">
+
+                    <h1 class="text-5xl">{ title }</h1>
+
+                    <p class="text-3xl font-bold text-orange-500">{price}</p>
+
+                    <div class="text-xl text-gray-600">
+                        <Content/>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    
+
+    </section>
+
+</DefaultLayout>

@@ -4,25 +4,25 @@ import Catalog from "../components/Catalog/Catalog.astro";
 import Contacts from "../components/Contacts/Contacts.astro";
 import Faqs from "../components/Faqs/Faqs.astro";
 import Galery from "../components/Galery/Galery.astro";
-import Header from "../components/Header/Header.astro";
-
-import Footer from "../components/Footer/Footer.astro";
 
 import Hero from "../components/Hero/Hero.astro";
 import Reviews from "../components/Reviews/Reviews.astro";
 
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import LogoMap from "../components/LogoMap/LogoMap.astro";
+import HowItWork from "../components/HowItWork/HowItWork.astro";
+import WhyWe from "../components/WhyWe/WhyWe.astro";
+
+const cards = await Astro.glob('../cards/*.md')
+
 ---
 
 <DefaultLayout>
-
-	<Header />
-
 	<Hero />
 
-	<About />
+	<LogoMap />
 
-	<Catalog />
+	<Catalog {cards} />
 
 	<Galery />
 	
@@ -30,9 +30,12 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 
 	<Reviews />
 
+	<HowItWork />
+
+	<About />
+
 	<Contacts />
 
-	<Footer />
 
 </DefaultLayout>
 

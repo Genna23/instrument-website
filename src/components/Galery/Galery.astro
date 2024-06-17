@@ -5,7 +5,7 @@ import slide2 from "./slides/2.jpg";
 import { Picture } from "astro:assets";
 ---
 
-<section class="my-12" id="gallery">
+<section class="py-12 bg-black  " id="gallery">
     <!-- container -->
 
     <div class=" mx-auto px-4 space-y-6">
@@ -16,9 +16,9 @@ import { Picture } from "astro:assets";
             <!-- slider content -->
 
             <div class="space-y-3">
-                <h2 class="text-5xl">Галерея</h2>
+                <h2 class="text-5xl text-orange-500">Галерея</h2>
 
-                <p class="text-xl">
+                <p class="text-xl text-white">
                     Просмотрите нашу галерею, чтобы увидеть разнообразие доступных строительных инструментов и оборудования. Здесь вы найдете изображения как стандартных, так и специализированных инструментов.
                 </p>
             </div>
@@ -34,7 +34,7 @@ import { Picture } from "astro:assets";
                             <Picture
                                 src={slide}
                                 formats={["avif", "webp"]}
-                                class="rounded-3xl object-cover"
+                                class="  object-cover"
                                 alt="Фотография СтройИнстурмент"
                             />
                         </div>
@@ -42,7 +42,7 @@ import { Picture } from "astro:assets";
                             <Picture
                                 src={slide}
                                 formats={["avif", "webp"]}
-                                class="rounded-3xl object-cover"
+                                class="  object-cover"
                                 alt="Фотография СтройИнстурмент"
                             />
                         </div>

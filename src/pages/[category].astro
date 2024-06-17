@@ -1,0 +1,125 @@
+---
+
+import Catalog from '../components/Catalog/Catalog.astro'
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+
+export async function getStaticPaths() {
+
+    return [
+
+        {
+            params: {category: 'breakers'},
+            props: {
+                name: "Бетоноломы",
+                genitive: "бетоноломов"
+            }
+        },
+        {
+            params: {category: 'mixers'},
+            props: {
+                name: "Бетономешалки",
+                genitive: "бетономешалок"
+            }
+        },
+        {
+            params: {category: 'boers'},
+            props: {
+                name: "Буры",
+                genitive: "буров"
+            }
+        },
+        {
+            params: {category: 'generators'},
+            props: {
+                name: "Генераторы",
+                genitive: "генераторов"
+            }
+        },
+        {
+            params: {category: 'jigsaws'},
+            props: {
+                name: "Лобзики",
+                genitive: "лобзиков"
+            }
+        },
+        {
+            params: {category: 'hammers'},
+            props: {
+                name: "Молотки",
+                genitive: "молотков"
+            }
+        },
+        {
+            params: {category: 'perforator'},
+            props: {
+                name: "Перфораторы",
+                genitive: "перфораторов"
+            }
+        },
+        {
+            params: {category: 'saws'},
+            props: {
+                name: "Пилы",
+                genitive: "пил"
+            }
+        },
+        {
+            params: {category: 'cleaners'},
+            props: {
+                name: "Пылесосы",
+                genitive: "пылесосов"
+            }
+        },
+        {
+            params: {category: 'planers'},
+            props: {
+                name: "Рубанки",
+                genitive: "рубанков"
+            }
+        },
+        {
+            params: {category: 'trimmers'},
+            props: {
+                name: "Триммеры",
+                genitive: "триммеров"
+            }
+        },
+        {
+            params: {category: 'grinding'},
+            props: {
+                name: "Шлифовальные машинки",
+                genitive: "шлифовальных машинок"
+            }
+        },
+        {
+            params: {category: 'crewdrivers'},
+            props: {
+                name: "Шуроповерты",
+                genitive: "шуроповертов"
+            }
+        },
+    ]
+
+}
+
+const { category } = Astro.params
+
+const { name, genitive } = Astro.props
+
+const genitiveUpper = genitive.charAt(0).toUpperCase() + genitive.slice(1)
+
+const cards = await Astro.glob('../cards/*.md')
+
+const categoryCards = cards.filter((card) => card.frontmatter.category === category)
+
+const description = `Аренда ${genitiveUpper} в Витебске. Широкий выбор качественных инструментов для любых задач. Удобные условия аренды и доступные цены. Заходите и выбирайте подходящие ${name} для ваших проектов!`
+
+---
+
+<DefaultLayout keyword={name} {description}>
+
+    <Catalog cards={categoryCards} />
+
+</DefaultLayout>
+
+

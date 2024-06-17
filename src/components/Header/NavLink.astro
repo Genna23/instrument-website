@@ -2,6 +2,54 @@
 
 const {link} = Astro.props
 
----
+import { Icon } from "astro-icon/components"
 
-<a class:list={["ease-linear duration-100 text-lg hover:text-orange-300"]} href={link.anchor}>{link.name}</a>
+---
+{
+    link.list ?
+    <div class="relative dropdown">
+        <a  class:list={["ease-linear duration-100 text-lg hover:text-orange-600 flex items-center"]} href='javascript:void(0);'>{link.name}{link.icon ? <Icon name={link.icon} class="ml-2"/> : ''}</a>
+        <div class="absolute lg:w-auto w-full h-auto lg:top-10 top-6 left-0 z-50 p-2 lg:bg-black bg-white rounded-lg hidden dropdown-list ease-linear duration-100 ">
+            {
+                link.list.map(item => {
+                    return <a class:list={["ease-linear duration-100 lg:text-white text-black text-lg hover:text-orange-600 flex items-center dropdown-link"]} href={item.src === 'catalog' ? `/#${item.src}` : `/${item.src}`}>{item.name}</a>
+                })
+            }
+        </div>
+    </div>
+    :
+    <a class:list={["ease-linear duration-100 text-lg hover:text-orange-600 flex items-center"]} href={`/#${link.src}`}>{link.name}{link.icon ? <Icon name={link.icon} class="ml-2"/> : ''}</a>
+}
+
+<script>
+
+    let isOpen = false
+
+    document.querySelectorAll('.dropdown').forEach(item => {
+        item.addEventListener('click', (e) => {
+            item.querySelector('.dropdown-list').classList.toggle('hidden')
+            isOpen = item.querySelector('.dropdown-list').className.includes('!opacity-100') ? true : false
+            
+            // console.log(isOpen)
+        })
+    })
+
+
+    // document.addEventListener(('click'), (e) => {
+
+    //     // console.log(!e.target.className.includes('dropdown-link'))
+
+    //     console.log(!e.target.className.includes('dropdown'))
+
+    //     if (!e.target.className.includes('dropdown-link') && isOpen) {
+
+    
+
+
+    //         document.querySelectorAll('.dropdown-list').forEach(item => {
+    //             item.classList.remove('!opacity-100')
+    //         })
+    //     }
+    // })
+
+</script>

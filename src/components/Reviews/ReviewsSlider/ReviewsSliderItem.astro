@@ -1,0 +1,14 @@
+---
+import reviewImage from "./review.jpg";
+
+import { Picture } from "astro:assets";
+---
+
+<div class="swiper-slide">
+    <Picture
+        src={reviewImage}
+        formats={["avif", "webp"]}
+        class="  object-cover"
+        alt="Фотография СтройИнстурмент"
+    />
+</div>

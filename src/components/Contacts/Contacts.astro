@@ -2,7 +2,7 @@
 
 import { Picture } from "astro:assets";
 
-import qrImage from './qr.jpg'
+import qrImage from './qr.png'
 
 import { Icon } from 'astro-icon/components'
 
@@ -13,7 +13,7 @@ import { Icon } from 'astro-icon/components'
 
 <!-- container -->
 
-    <div class=" mx-auto px-4 space-y-6">
+    <div class="mx-auto px-4 space-y-6">
 
         <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
 
@@ -24,21 +24,16 @@ import { Icon } from 'astro-icon/components'
                 <h2 class="text-5xl">Контакты</h2>
                 <div class="flex items-start">
                     <Icon name="phone" class="text-2xl text-orange-400 cursor-pointer mr-2"/>
-                    <a href="tel:+375 (33) 857 21 98" class="inline-block"><span class="text-orange-400">Viber, Whatsapp, Telegram: </span> +375 (33) 857 21 98</a>
-                </div>
-                <div class="flex items-start">
-                    <Icon name="marker" class="text-2xl text-orange-400 cursor-pointer mr-2"/>
-                    <p><span class="text-orange-400">Адрес:</span> Витебск, Правды 64 б</p>
+                    <a href="tel:+375292599494" class="inline-block"><span class="text-orange-400">Viber, Whatsapp, Telegram: </span>+375 (29) 259 94 94</a>
                 </div>
                 <div class="flex items-start"> 
                     <Icon name="time" class="text-2xl text-orange-400 cursor-pointer mr-2"/>
-                    <p><span class="text-orange-400">Время работы:</span> 09:00 — 19:00 без выходных</p>
+                    <p><span class="text-orange-400">Время работы:</span> 08:00 — 18:00 без выходных</p>
                 </div>
-                <p>
-                    ИП Равков Иван Анатольевич
-Свидетельство № 391808515 <br>
-выданное администрацией Октябрьского
-района г. Витебска 04.07.2016
+                <p>           
+                    Индивидуальный Предприниматель <b>Шмурадко Сергей Викторович</b> <br>
+                    Свидетельство <b>№391288928</b>
+                    выданное Витебским районным исполнительным комитетом <b>20 октября 2016 г.</b>
                 </p>
             </div>
 
@@ -50,16 +45,7 @@ import { Icon } from 'astro-icon/components'
                     alt="Фотография СтройИнстурмент"
                 />
 
-                <Picture
-                    src={qrImage}
-                    formats={["avif", "webp"]}
-                    alt="Фотография СтройИнстурмент"
-                />
-
             </div>
         </div>
-    </div>
-    <div class="mt-12">
-        <div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/10275/polotsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Полоцк</a><a href="https://yandex.by/maps/10275/polotsk/?ll=28.768349%2C55.485576&mode=whatshere&utm_medium=mapframe&utm_source=maps&whatshere%5Bpoint%5D=28.779164%2C55.488110&whatshere%5Bzoom%5D=13&z=13" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Гоголя — Яндекс Карты</a><iframe class="w-full h-96" src="https://yandex.by/map-widget/v1/?ll=28.768349%2C55.485576&mode=whatshere&whatshere%5Bpoint%5D=28.779164%2C55.488110&whatshere%5Bzoom%5D=13&z=13" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
     </div>
 </section>

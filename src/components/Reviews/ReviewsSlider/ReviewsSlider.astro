@@ -1,0 +1,62 @@
+---
+import ReviewsSliderItem from "./ReviewsSliderItem.astro";
+---
+
+<!-- slider -->
+<div class="swiper reviews">
+    <!-- slider wrapper -->
+
+    <div class="swiper-wrapper">
+        <!-- slider item -->
+
+        <ReviewsSliderItem />
+
+        <ReviewsSliderItem />
+
+        <ReviewsSliderItem />
+
+        <ReviewsSliderItem />
+
+        <ReviewsSliderItem />
+
+        <ReviewsSliderItem />
+    </div>
+
+    <!-- pagination -->
+
+    <div class="swiper-pagination"></div>
+</div>
+
+<script>
+    import Swiper from "swiper";
+
+    import { Pagination } from "swiper/modules";
+
+    import "swiper/css";
+    import "swiper/css/navigation";
+    import "swiper/css/pagination";
+
+    const swiper = new Swiper(".reviews", {
+        modules: [Pagination],
+        spaceBetween: 30,
+        slidesPerView: 1,
+        breakpoints: {
+            786: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            460: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            },
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>

@@ -5,15 +5,17 @@ import { data } from '../../data/navData'
 
 import { Icon } from 'astro-icon/components'
 
+import logo from './logo.svg'
+
 ---
-<header>
+<header class="lg:bg-black text-white bg-white h-0 lg:h-full">
 
     <!-- container -->
     <div class="mx-auto py-6 px-8">
 
             <!-- burger icon -->
-            <label for="checkboxMenu" class="bg-white p-6 rounded-xl rounded-full right-4 z-20 top-2 fixed shadow cursor-pointer block lg:hidden">
-                <Icon name="burger" class="text-4xl cursor-pointer"/>
+            <label for="checkboxMenu" class="bg-black sm:p-6 p-3 rounded-xl rounded-full right-4 z-20 top-2 fixed shadow cursor-pointer block lg:hidden">
+                <Icon name="burger" class="text-4xl text-orange-500 cursor-pointer"/>
             </label>
 
         <!-- checkbox -->
@@ -21,11 +23,11 @@ import { Icon } from 'astro-icon/components'
 
         <!-- wrapper -->
 
-       <div class="bg-white flex flex-col lg:flex-row lg:justify-between lg:items-end lg:relative z-20 fixed lg:w-full lg:h-auto h-full w-8/12 lg:left-0 left-[-100%] lg:px-0 px-8 menu-wrapper ease-linear duration-300 lg:py-0 py-2 top-0">
+       <div class="flex bg-black flex-col lg:flex-row lg:justify-between lg:items-center lg:relative z-20 fixed lg:w-full lg:h-auto h-full w-8/12 lg:left-0 left-[-100%] lg:px-0 px-8 menu-wrapper ease-linear duration-300 lg:py-0 py-2 top-0">
 
          <!-- logo wrapper -->
          <div>
-            <a class="text-2xl" href="#home">СтройИнструмент</a>
+            <a class="text-2xl" href="#home"><img src={logo.src} alt="строй инструмент" width={300}></a>
             <!-- logo     -->
             <!-- <Picture></Picture> -->
         </div>
@@ -43,7 +45,7 @@ import { Icon } from 'astro-icon/components'
 
         <!-- contact button -->
         <div>
-            <a class="text-lg text-white bg-orange-400 px-8 py-3 rounded-3xl ease-linear duration-100 hover:bg-orange-500 inline-block" href="#">Связаться</a>
+            <a class="text-lg font-bold text-white ease-linear duration-100 hover:text-orange-600 flex" href="tel:+375292599494"><Icon name="phone" class="text-2xl text-orange-500 cursor-pointer mr-2"/>+375 (29) 259 94 94</a>
         </div>
 
        </div>

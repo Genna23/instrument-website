@@ -1,30 +1,89 @@
 export const data = [
     {
         name: "Главная",
-        anchor: "#home"
-    },
-    {
-        name: "О нас",
-        anchor: "#about"
+        src: "home"
     },
     {
         name: "Каталог",
-        anchor: "#catalog"
+        icon: 'dropdown',
+        src: "catalog",
+        list: [
+            {
+                name: "Все позиции",
+                src: "catalog"
+            },
+            {
+                name: "Бетоноломы",
+                src: "breakers"
+            },
+            {
+                name: "Бетономешалки",
+                src: "mixers"
+            },
+            {
+                name: "Буры",
+                src: "boers"
+            },
+            {
+                name: "Генераторы",
+                src: "generators"
+            },
+            {
+                name: "Лобзики",
+                src: "jigsaws"
+            },
+            {
+                name: "Молотки",
+                src: "hammers"
+            },
+            {
+                name: "Перфораторы",
+                src: "perforator"
+            },
+            {
+                name: "Пилы",
+                src: "saws"
+            },
+            {
+                name: "Пылесосы",
+                src: "cleaners"
+            },
+            {
+                name: "Рубанки",
+                src: "planers"
+            },
+            {
+                name: "Триммеры",
+                src: "trimmers"
+            },
+            {
+                name: "Шлифовка",
+                src: "grinding"
+            },
+            {
+                name: "Шуроповерты",
+                src: "screwdrivers"
+            },
+        ]
     },
     {
         name: "Галерея",
-        anchor: "#gallery"
+        src: "gallery"
     },
     {
         name: "FAQ",
-        anchor: "#faqs"
+        src: "faqs"
     },
     {
         name: "Отзывы клиентов",
-        anchor: "#reviews"
+        src: "reviews"
     },
     {
         name: "Контакты",
-        anchor: "#contacts"
+        src: "contacts"
+    },
+    {
+        name: "О нас",
+        src: "about"
     },
 ]

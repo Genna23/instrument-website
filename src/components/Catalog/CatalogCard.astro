@@ -1,30 +1,30 @@
 ---
-import imageCard from "./imageCard.png";
+
 
 import { Picture } from "astro:assets";
+
+const { frontmatter } = Astro.props
+
+import urlSlug from "../../utils/urlSlug";
+
 ---
 
 <!-- card item -->
-<div class="bg-white rounded-3xl px-6 py-3 space-y-3">
+<a href={`/catalog/${urlSlug(frontmatter.title)}`} class="bg-white px-6 py-3 ease-linear duration-100 space-y-3 block hover:shadow-xl flex flex-col justify-between">
     <!-- card picture -->
 
     <div>
-        <Picture
-            src={imageCard}
-            formats={["avif", "webp"]}
-            class="rounded-3xl"
-            alt="Аренда дрели в Витебске"
-        />
+        <Picture src={frontmatter.image.src} alt={frontmatter.image.alt} width='300' height='300' formats={['avif', 'webp']}/>
     </div>
 
     <!-- card content -->
 
     <div>
 
-        <h3 class="text-xl">Дрель Bosch GBM 10 re</h3>
+        <h3 class="text-xl">{frontmatter.title}</h3>
 
-        <p class="text-orange-400">15 руб/сут</p>
+        <p class="text-orange-400">{frontmatter.price}</p>
 
     </div>
 
-</div>
+</a>
